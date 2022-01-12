@@ -14,25 +14,22 @@ export default function EnterForm({name, dob, setName, setDob, handleSubmit}){
     },[formDob])
 
     return(
-        <Box component='form'>
-            <h1>input</h1>
+        <Paper elevation={13}>
+            <h3>Input</h3>
             <TextField
                 onChange={(e) => setFormName(e.target.value)}
                 label='Name'
+                fullWidth
             />
-            <Button onClick={() => alert(name)}>
-                alert name
-            </Button>
+            <br/>
             <TextField
                 onChange={(e) => setFormDob(e.target.value)}
                 label='DOB'
+                fullWidth
             />
-            <Button onClick={() => alert(dob)}>
-                alert dob
-            </Button>
-            <Button onClick={handleSubmit}>
+            <Button variant='outlined' onClick={handleSubmit}>
                 Submit
             </Button>
-        </Box>
+        </Paper>
     )
 }

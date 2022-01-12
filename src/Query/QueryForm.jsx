@@ -1,7 +1,7 @@
 import { Box, Button, Paper, TextField } from '@mui/material'
 import { useState, useEffect } from 'react'
 
-export default function QueryForm({name, dob, setName, setDob, handleSubmit}){
+export default function QueryForm({name, dob, setName, setDob, handleRegularSubmit}){
 
     const [formName, setFormName] = useState('')
     const [formDob, setFormDob] = useState('')
@@ -14,19 +14,31 @@ export default function QueryForm({name, dob, setName, setDob, handleSubmit}){
     },[formDob])
 
     return(
-        <Box component='form'>
-            <h1>Query</h1>
-            <TextField
-                onChange={(e) => setFormName(e.target.value)}
-                label='Name'
-            />
-            <TextField
-                onChange={(e) => setFormDob(e.target.value)}
-                label='DOB'
-            />
-            <Button onClick={handleSubmit}>
+        <Paper elevation={13} className='query-paper'>
+            <h3 className='query-form-header'>Query</h3>
+            <div className='query-form-item'>
+                <TextField
+                    onChange={(e) => setFormName(e.target.value)}
+                    variant='outlined'
+                    label='Name'
+                    fullWidth
+                />
+            </div>
+            {/* <div className='query-form-item'>
+                <TextField
+                    onChange={(e) => setFormDob(e.target.value)}
+                    label='DOB'
+                    fullWidth
+                />
+            </div> */}
+            <br/>
+            <Button className='query-button'  
+                onClick={handleRegularSubmit} 
+                variant='outlined' 
+                fullWidth
+            >
                 Query
             </Button>
-        </Box>
+        </Paper>
     )
 }

@@ -81,6 +81,17 @@ export async function indexPerson(personJson){
                 'Content-Type': 'application/json'
             })
         })
-        const body = await response.json()
-    return body
+        const status = response.status
+    return status
+}
+
+export async function bulkUpload(arrayOfPersons){
+    arrayOfPersons.forEach(person => {
+        const response = indexPerson(person)
+    })
+    // for (const [person, index] of arrayOfPersons.entries()) {
+        
+    //     console.log(person)
+    //     console.log(index)
+    // }
 }

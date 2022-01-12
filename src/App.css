@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home-layout {
+  display: grid;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-columns: [first] 13% [second] 87% [columns-end];
+  grid-template-rows: [row1-start] 5vh [row2-start] 5vh [row3-start] auto [rows-end];
 }
 
-.App-link {
-  color: #61dafb;
+.nav {
+  margin: 10px;
+  height: fit-content;
+  width: auto;
+  grid-column: first;
+  grid-row: row1-start/ rows-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.body {
+  margin: 10px;
+  height: 90%;
+  padding: 10px;
+  grid-column: second;
+  grid-row: row1-start / rows-end;
 }
+
+.query-paper {
+  width: 100%;
+}
+
+.query-form-header {
+  margin-left: 5px;
+}
+
+.query-form-item {
+  margin-left: 5px;
+  padding: 0;
+}
+
+.query-button {
+
+}
+
+.query-results-main {
+  height: 65%;
+}
+
+.query-results-tables-container {
+  height: 99%;
+  display: grid;
+  grid-template-columns: [first] 50% [second] 50% [columns-end];
+  grid-template-rows: [start] 99% [end];
+}
+
