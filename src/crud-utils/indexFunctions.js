@@ -72,7 +72,6 @@ export async function createIndex(){
 }
 
 export async function indexPerson(personJson){
-    console.log(personJson)
     const response = await fetch('http://localhost:8080/index-single', 
         {
             method: 'POST',
@@ -86,8 +85,16 @@ export async function indexPerson(personJson){
 }
 
 export async function bulkUpload(arrayOfPersons){
+    async function indexEachPerson(person){
+        const response = await indexPerson(person)
+        if (response.ok) { 
+            console.log(`name: ${person.name}, dob: ${person.dob} indexed successfully`) 
+        } else {
+            console.log(`name: ${person.name}, dob: ${person.dob} failed to index`) 
+        }
+    }
     arrayOfPersons.forEach(person => {
-        const response = indexPerson(person)
+        indexEachPerson(person)
     })
     // for (const [person, index] of arrayOfPersons.entries()) {
         

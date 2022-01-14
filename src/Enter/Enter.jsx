@@ -2,6 +2,7 @@ import { Alert, Button } from "@mui/material"
 import { useState, useEffect } from "react"
 import { bulkUpload, indexPerson } from "../crud-utils/indexFunctions"
 import { persons } from "../mock-data/MockData1000"
+import BulkEnterUpload from "./BulkEnterModal"
 import EnterForm from "./EnterForm"
 
 export default function Enter({}){
@@ -40,6 +41,7 @@ export default function Enter({}){
                     Name successfully added
                 </Alert>
             }
+            <BulkEnterUpload />
             {/* <Button onClick={handleBulkEntry}>
                 Bulk Upload
             </Button> */}
