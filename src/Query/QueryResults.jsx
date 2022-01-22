@@ -9,7 +9,8 @@ export default function QueryResults({regularResults, rniResults}){
             id : index,
             name: person.name,
             dob: person.dob,
-            time: person.time
+            time: person.time,
+            score: person.score
         })
     })
     const transformedRniData = rniResults.map((person, index) => {
@@ -17,7 +18,8 @@ export default function QueryResults({regularResults, rniResults}){
             id : index,
             name: person.name,
             dob: person.dob,
-            time: person.time
+            time: person.time,
+            score: person.score
         })
     })
     console.log(rniResults)
@@ -25,6 +27,7 @@ export default function QueryResults({regularResults, rniResults}){
         {field: 'name', headerName: 'Name', width: 150},
         {field: 'dob', headerName: 'DOB', width: 100},
         {field: 'time', headerName: 'Time (ms)', width: 100},
+        {field: 'score', headerName: 'Score', width: 100},
     ]
     return(
         <Paper className='query-results-main' elevation={13}>

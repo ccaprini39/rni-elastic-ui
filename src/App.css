@@ -56,3 +56,10 @@
   transform: 'translate(-50%, -50%)';
   width: 400;
 }
+
+.query-form-row {
+  margin: 5px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
