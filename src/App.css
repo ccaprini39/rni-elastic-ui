@@ -45,7 +45,8 @@
 .query-results-tables-container {
   height: 99%;
   display: grid;
-  grid-template-columns: [first] 50% [second] 50% [columns-end];
+  /* grid-template-columns: [first] 50% [second] 50% [columns-end]; */
+  grid-template-columns: [first] 99% [columns-end];
   grid-template-rows: [start] 99% [end];
 }
 

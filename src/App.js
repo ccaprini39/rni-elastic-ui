@@ -7,6 +7,7 @@ import Query from './Query/Query'
 import { createTheme, Paper } from '@mui/material'
 import Nav from './Nav'
 import { ThemeProvider } from '@emotion/react'
+import MockDataView from './MockData/MockDataView'
 
 
 export default function App(){
@@ -29,6 +30,7 @@ export default function App(){
               <Routes>
                 <Route path='entry' element={<Enter />} />
                 <Route path='query' element={<Query />} />
+                <Route path='mock' element={<MockDataView />} />
               </Routes>
             </Paper>
           </BrowserRouter>

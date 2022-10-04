@@ -1,6 +1,8 @@
+import {SPRING_BOOT_APP_URL} from './urlEndpoints'
+
 export async function queryRniPerson(personJson){
     console.log(personJson)
-    const response = await fetch('http://localhost:8080/query-rni-name-single', 
+    const response = await fetch(`${SPRING_BOOT_APP_URL}/query-rni-name-single`, 
         {
             method: 'POST',
             body: JSON.stringify(personJson),
@@ -14,7 +16,7 @@ export async function queryRniPerson(personJson){
 
 export async function queryPerson(personJson){
     console.log(personJson)
-    const response = await fetch('http://localhost:8080/query-name-single', 
+    const response = await fetch(`${SPRING_BOOT_APP_URL}/query-name-single`, 
         {
             method: 'POST',
             body: JSON.stringify(personJson),
@@ -28,7 +30,7 @@ export async function queryPerson(personJson){
 
 export async function advancedQueryRniPerson(advancedRequest){
     console.log(advancedRequest)
-    const response = await fetch('http://localhost:8080/query-advanced-rni-name-single', 
+    const response = await fetch(`${SPRING_BOOT_APP_URL}/query-advanced-rni-name-single`, 
         {
             method: 'POST',
             body: JSON.stringify(advancedRequest),
